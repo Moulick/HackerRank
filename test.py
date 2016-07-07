@@ -1,12 +1,17 @@
-size_a = input()
+from itertools import chain
 
-set_a = set(list(map(int, input().split())))
+N = int(input())
 
-size_b = input()
+L = list(input().split())
 
-set_b = set(list(map(int, input().split())))
 
-c = list(set_a.union(set_b) - set_a.intersection(set_b))
-c.sort()
-for x in c:
-    print(x)
+L_1 = list(chain(L))
+
+L_1.sort(key=int)
+
+X = []
+for i in L_1:
+    if i not in X:
+        X.append(i)
+print(X)
+print(X[int(len(X)) - 2])
