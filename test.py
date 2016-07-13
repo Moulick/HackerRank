@@ -1,6 +1,7 @@
-x = int(input())
-string1 = [input(), input()]
-print (string1)
-#string2 = list(input())
+#!/bin/python3
 
-print([x for x in range(len(string1[x for x in range(len(string1))]))])
+import sys
+# useless code above this
+n = int(input().strip())
+arr = [int(arr_temp) for arr_temp in input().strip().split(' ')]
+print(" ".join(str(x) for x in arr[::-1]))
