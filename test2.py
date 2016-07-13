@@ -1,32 +1,27 @@
-N = int(raw_input())
-final = list()
-for i in range(N):
-    lst = list()
-    name = str(raw_input())
-    marks = float(raw_input())
-    lst.append(name)
-    lst.append(marks)
-    final.append(lst)
-print final
-print len(final)
-k = []
-for i in range(len(final)):
-    k.append(final[i][1])
+# Replace all ______ with rjust, ljust or center.
 
-print k
+thickness = int(input())  # This must be an odd number
+c = 'H'
 
-k1 = list()
+# Top Cone
+for i in range(thickness):
+    print((c * i).______(thickness - 1) + c + (c * i).______(thickness - 1))
 
-for i in range(len(k)):
-    if k[i] != min(k):
-        k1.append(k[i])
-print k1
+# Top Pillars
+for i in range(thickness + 1):
+    print((c * thickness).______(thickness * 2) +
+          (c * thickness).______(thickness * 6))
 
-student_names = list()
-k1_min = min(k1)
-for i in range(len(final)):
-    if final[i][1] == k1_min:
-        student_names.append(final[i][0])
-student_names.sort()
-for i in range(len(student_names)):
-    print student_names[i]
+# Middle Belt
+for i in range((thickness + 1) // 2):
+    print((c * thickness * 5).______(thickness * 6))
+
+# Bottom Pillars
+for i in range(thickness + 1):
+    print((c * thickness).______(thickness * 2) +
+          (c * thickness).______(thickness * 6))
+
+# Bottom Cone
+for i in range(thickness):
+    print(((c * (thickness - i - 1)).______(thickness) + c +
+           (c * (thickness - i - 1)).______(thickness)).______(thickness * 6))

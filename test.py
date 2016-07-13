@@ -1,7 +1,6 @@
-string = input()
+x = int(input())
+string1 = [input(), input()]
+print (string1)
+#string2 = list(input())
 
-print(any(c.isalnum() for c in string))
-print(any(c.isalpha() for c in string))
-print(any(c.isdigit() for c in string))
-print(any(c.islower() for c in string))
-print(any(c.isupper() for c in string))
+print([x for x in range(len(string1[x for x in range(len(string1))]))])
