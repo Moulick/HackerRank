@@ -7,7 +7,7 @@ stuart_score = 0
 for i in range(s_len):
     if s[i] in letters:
         kevin_score += (s_len - i)
-#        print("Kevin", kevin_score)
+#       print("Kevin", kevin_score)
     else:
         stuart_score += (s_len - i)
 #        print("Stuart", stuart_score)
