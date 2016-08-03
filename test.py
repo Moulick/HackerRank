@@ -1,31 +1,28 @@
-class Node:
+from math import sqrt as sqrt
+from time import process_time
 
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+t = process_time()
 
 
-class Solution:
+def is_prime(x):
+    Prime = 'Not prime'
+    if (x < 2):
+        Prime = 'Not prime'
+    elif (x == 2):
+        Prime = 'Prime'
+    else:
+        for n in range(2, (int(sqrt(x)) + 1)):
+            print(n)
+            if (x % n) == 0:
+                Prime = 'Not prime'
+                break
+            else:
+                Prime = 'Prime'
+    print(Prime)
 
-    def display(self, head):
-        current = head
-        while current:
-            print(current.data, end=' ')
-            current = current.next
+num = int(input().strip())
+for x in range(num):
+    is_prime(int(input().strip()))
 
-    def insert(self, head, data):
-        if head == None:
-            head = Node(data)
-        else:
-            current = head
-            while current.next != None:
-                current = current.next
-            current.next = Node(data)
-        return head
-mylist = Solution()
-T = int(input())
-head = None
-for i in range(T):
-    data = int(input())
-    head = mylist.insert(head, data)
-mylist.display(head)
+elapsed_time = (process_time() - t)
+print(elapsed_time)
